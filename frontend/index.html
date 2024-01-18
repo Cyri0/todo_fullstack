@@ -8,6 +8,16 @@
 </head>
 <body>
     
+    <form action="api/task/" method="post">
+        {% csrf_token %}
+        <input type="text" name="text" id="">
+        
+        <input type="submit">
+    </form>
+
+    <div id="tasks"></div>
+
+
     <script src="static/script.js"></script>
 </body>
 </html>

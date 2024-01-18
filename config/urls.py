@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from django.shortcuts import render
+
+from todolist import views
 
 def main(request):
     return render(request, 'index.html')
@@ -25,4 +26,6 @@ def main(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main),
+    path('api/task/', views.taskHandler),
+    path('api/task/<int:pk>', views.specificTaskHandler),
 ]
